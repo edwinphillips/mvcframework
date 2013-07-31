@@ -1,22 +1,22 @@
 <?php
-class Cache {
+class cache {
 
-	function get($fileName) {
-		$fileName = ROOT.DS.'tmp'.DS.'cache'.DS.$fileName;
-		if (file_exists($fileName)) {
-			$handle = fopen($fileName, 'rb');
-			$variable = fread($handle, filesize($fileName));
+	function get($filename) {
+		$filename = ROOT . DS . 'tmp' . DS . 'cache' . DS . $filename;
+		if (file_exists($filename)) {
+			$handle = fopen($filename, 'rb');
+			$var = fread($handle, filesize($filename));
 			fclose($handle);
-			return unserialize($variable);
+			return unserialize($var);
 		} else {
 			return null;
 		}
 	}
 	
-	function set($fileName,$variable) {
-		$fileName = ROOT.DS.'tmp'.DS.'cache'.DS.$fileName;
-		$handle = fopen($fileName, 'a');
-		fwrite($handle, serialize($variable));
+	function set($filename, $var) {
+		$filename = ROOT . DS . 'tmp' . DS . 'cache' . DS . $filename;
+		$handle = fopen($filename, 'a');
+		fwrite($handle, serialize($var));
 		fclose($handle);
 	}
 

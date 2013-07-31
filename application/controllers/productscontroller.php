@@ -1,7 +1,7 @@
 <?php
 
 class ProductsController extends VanillaController {
-	
+
 	function beforeAction () {
 
 	}
@@ -12,13 +12,12 @@ class ProductsController extends VanillaController {
 		$this->Product->showHMABTM();
 		$product = $this->Product->search();
 		$this->set('product',$product);
-		
+
 	}
 
 
 	function afterAction() {
 
 	}
-	
 
 }
